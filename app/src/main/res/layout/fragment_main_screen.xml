@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.mutkuensert.pixabaysearcher.viewmodel.MainScreenFragmentViewModel" />
 
+        <import type="android.view.View"/> <!-- No auto complete for imports -->
     </data>
 
     <LinearLayout
@@ -23,7 +27,7 @@
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Search" />
+                android:hint="Search"/>
 
             <Button
                 android:layout_width="0dp"
@@ -31,7 +35,8 @@
                 android:layout_weight="2"
                 android:id="@+id/searchButton"
                 android:text="Search"
-                android:layout_marginStart="10dp"/>
+                android:layout_marginStart="10dp"
+                android:onClick="@{() -> viewModel.searchInPixabay(searchEditText.getText().toString())}"/>
         </LinearLayout>
 
 

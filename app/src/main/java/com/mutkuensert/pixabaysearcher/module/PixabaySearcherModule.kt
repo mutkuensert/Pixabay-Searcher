@@ -20,7 +20,7 @@ object PixabaySearcherModule {
     fun providePixabayService(): PixabayService {
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
-        return Retrofit.Builder().baseUrl("https://pixabay.com/api/")
+        return Retrofit.Builder().baseUrl("https://pixabay.com/")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build().create(PixabayService::class.java)
     }
