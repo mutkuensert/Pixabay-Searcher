@@ -10,6 +10,10 @@
 An Android application which has been developed with Retrofit, Glide, Data binding and Hilt for practicing.
 It simply shows the preview images of search result in [recycler view](https://developer.android.com/guide/topics/ui/layout/recyclerview) as a list using [Pixabay Api](https://pixabay.com/api/docs/).
 
+<div align="left">
+ <img src="docs/gif.gif" width="230"/>
+</div>
+
 ## Architecture
 MVVM architecture has been used in the development of this app. 
 ([ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel))
