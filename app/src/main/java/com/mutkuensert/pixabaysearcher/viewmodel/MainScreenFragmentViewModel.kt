@@ -5,13 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mutkuensert.pixabaysearcher.model.MainModel
 import com.mutkuensert.pixabaysearcher.service.PixabayService
-import dagger.hilt.android.scopes.ViewModelScoped
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@HiltViewModel
 class MainScreenFragmentViewModel @Inject constructor(
     private val service: PixabayService
 ) : ViewModel() {

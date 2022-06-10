@@ -6,16 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.mutkuensert.pixabaysearcher.adapter.CustomAdapter
 import com.mutkuensert.pixabaysearcher.databinding.FragmentMainScreenBinding
 import com.mutkuensert.pixabaysearcher.viewmodel.MainScreenFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainScreenFragment : Fragment() {
     private lateinit var binding: FragmentMainScreenBinding
-    @Inject lateinit var viewModel: MainScreenFragmentViewModel
+    private lateinit var viewModel: MainScreenFragmentViewModel
     private val recyclerAdapter = CustomAdapter(mutableListOf())
 
     override fun onCreateView(
@@ -28,6 +28,8 @@ class MainScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(this).get(MainScreenFragmentViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.recyclerView.adapter = recyclerAdapter
