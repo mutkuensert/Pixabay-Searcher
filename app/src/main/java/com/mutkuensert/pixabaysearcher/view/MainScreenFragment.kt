@@ -16,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainScreenFragment : Fragment() {
     private lateinit var binding: FragmentMainScreenBinding
     private lateinit var viewModel: MainScreenFragmentViewModel
-    private val recyclerAdapter = CustomAdapter(mutableListOf())
+    private val recyclerAdapter = CustomAdapter(listOf())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +40,7 @@ class MainScreenFragment : Fragment() {
     private fun observeItems(){
         viewModel.mainModel.observe(viewLifecycleOwner, Observer { mainModel ->
             mainModel.hits?.let {
-                recyclerAdapter.submitList(it.toMutableList())
+                recyclerAdapter.submitList(it)
             }
         })
     }

@@ -1,14 +1,12 @@
 package com.mutkuensert.pixabaysearcher.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mutkuensert.pixabaysearcher.databinding.SingleItemBinding
 import com.mutkuensert.pixabaysearcher.model.HitsModel
-import com.mutkuensert.pixabaysearcher.model.MainModel
 
-class CustomAdapter(private var hitsModelList: MutableList<HitsModel>): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private var hitsModelList: List<HitsModel>): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     private lateinit var binding: SingleItemBinding
 
     class ViewHolder(private val binding: SingleItemBinding): RecyclerView.ViewHolder(binding.root){
@@ -32,7 +30,7 @@ class CustomAdapter(private var hitsModelList: MutableList<HitsModel>): Recycler
         return hitsModelList.size
     }
 
-    fun submitList(newHitsModelList: MutableList<HitsModel>){
+    fun submitList(newHitsModelList: List<HitsModel>){
         hitsModelList = newHitsModelList
         notifyDataSetChanged()
     }

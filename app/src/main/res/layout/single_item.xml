@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:adjustViewBounds="true"
-            app:imageUrl="@{item.previewURL}"
-            app:srcCompat="@drawable/ic_baseline_downloading_24" />
+            app:imageUrl="@{item.largeImageURL}"/>
     </LinearLayout>
 </layout>
