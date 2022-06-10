@@ -8,7 +8,11 @@
             name="viewModel"
             type="com.mutkuensert.pixabaysearcher.viewmodel.MainScreenFragmentViewModel" />
 
-        <import type="android.view.View"/> <!-- No auto complete for imports -->
+        <variable
+            name="constants"
+            type="com.mutkuensert.pixabaysearcher.util.ConstantsKt" />
+
+        <import type="android.view.View"/> <!-- for searchEditText.getText() - (No auto complete for imports) -->
     </data>
 
     <LinearLayout
@@ -16,12 +20,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.MainScreenFragment">
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/ic_pixabaylogo"
+            android:layout_margin="15dp"
+            app:pixabayUrl="@{constants.PIXABAY_URL}"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="30dp">
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
             <EditText
                 android:id="@+id/searchEditText"
                 android:layout_width="0dp"

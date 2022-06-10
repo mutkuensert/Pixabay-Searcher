@@ -1,6 +1,10 @@
 package com.mutkuensert.pixabaysearcher.adapter
 
+import android.content.Intent
+import android.net.Uri
+import android.view.View
 import android.widget.ImageView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -20,4 +24,11 @@ fun loadImage(imageView: ImageView, imageUrl: String?){
                 .error(R.drawable.ic_baseline_error_outline_24))
             .into(imageView)
     }
+}
+
+@BindingAdapter("pixabayUrl")
+fun getPixabayLogo(imageView: ImageView, pixabayUrl: String){
+    imageView.setOnClickListener(View.OnClickListener {
+        startActivity(it.context, Intent(Intent.ACTION_VIEW, Uri.parse(pixabayUrl)),null)
+    })
 }
