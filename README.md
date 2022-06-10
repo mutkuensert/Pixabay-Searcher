@@ -23,6 +23,7 @@ MVVM architecture has been used in the development of this app.
 * [Data Binding](https://developer.android.com/topic/libraries/data-binding)
 * [Glide](https://github.com/bumptech/glide) - To load images into ImageViews.
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Automatized dependency injection library.
+* [Hilt](https://dagger.dev/hilt/) - Hilt documentation on dagger.dev.
 * [Moshi](https://github.com/square/moshi/) - JSON library to parse JSON.
 * [Retrofit](https://square.github.io/retrofit/) - To make HTTP requests.
 * [ViewModel](https://developer.android.com/jetpack/androidx/releases/lifecycle) - Link for ViewModel dependencies.
