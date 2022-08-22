@@ -7,7 +7,6 @@ import com.mutkuensert.pixabaysearcher.databinding.SingleItemBinding
 import com.mutkuensert.pixabaysearcher.model.HitsModel
 
 class CustomAdapter(private var hitsModelList: List<HitsModel>): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
-    private lateinit var binding: SingleItemBinding
 
     class ViewHolder(private val binding: SingleItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(hitsModel: HitsModel){
@@ -16,7 +15,7 @@ class CustomAdapter(private var hitsModelList: List<HitsModel>): RecyclerView.Ad
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        binding = SingleItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = SingleItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
